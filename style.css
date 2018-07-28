@@ -94,7 +94,8 @@ body {
   .column ul {
     list-style-type: none;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    min-height: 120px; }
 
 .card {
   margin: 4px;
@@ -104,7 +105,8 @@ body {
   .card p {
     color: #392615;
     font-weight: bold;
-    font-size: 16px; }
+    font-size: 16px;
+    word-break: break-all; }
 
 .btn-delete:hover {
   background-color: #AD2C1B;

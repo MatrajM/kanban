@@ -62,26 +62,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.element.parentNode.removeChild(this.element);
             }
         }
+
         var board = {
-            name: 'Kanban Board',
-            addColumn: function(column) {
-              this.element.appendChild(column.element);
-              initSortable(column.id); //About this feature we will tell later
-            },
-            element: document.querySelector('#board .column-container')
-        };
-        function initSortable(id) {
-            var el = document.getElementById(id);
-            var sortable = Sortable.create(el, {
-              group: 'kanban',
-              sort: true
-            });
-          }
+          name: 'Kanban Board',
+          addColumn: function(column) {
+            this.element.appendChild(column.element);
+            initSortable(column.id); //About this feature we will tell later
+          },
+          element: document.querySelector('#board .column-container')
+      };
+
+      function initSortable(id) {
+        var el = document.getElementById(id);
+        var sortable = Sortable.create(el, {
+          group: 'kanban',
+          sort: true
+        });
+      }
+
           document.querySelector('#board .create-column').addEventListener('click', function() {
             var name = prompt('Enter a column name');
             var column = new Column(name);
-            board.addColumn(column);
-        });
+            board.addColumn(column); 
+          });
+        
+    
         // CREATING COLUMNS
         var todoColumn = new Column('To do');
         var doingColumn = new Column('Doing');
